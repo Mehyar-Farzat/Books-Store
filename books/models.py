@@ -5,6 +5,7 @@ from django.utils import timezone
 
 
 
+
 class Auther(models.Model):
     name = models.CharField(max_length=100)
     age = models.IntegerField()
@@ -23,3 +24,13 @@ class Book(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Review(models.Model):
+    book = models.ForeignKey(Book, on_delete=models.CASCADE, related_name='book_review')
+    reviewer_name = models.CharField(max_length=30)
+    content = models.TextField()
+    rate = models.IntegerField()
+
+    def __str__(self):
+        return str(self.book) + ": " + str(self.content)  # to show the book name and the review content in admin page
