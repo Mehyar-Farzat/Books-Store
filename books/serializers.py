@@ -1,4 +1,4 @@
-from rest_framework import serializer
+from rest_framework import serializers
 from .models import Auther, Book, Review
 
 class ReviewSerializer(serializers.ModelSerializer):
@@ -7,20 +7,20 @@ class ReviewSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
-class AutherListSerializer(serializer.ModelSerializer):
+class AutherListSerializer(serializers.ModelSerializer):
     book = serializers.StringRelatedField()
     class Meta:
         model = Auther
         fields = '__all__'
 
-class AutherDetailSerializer(serializer.ModelSerializer):
+class AutherDetailSerializer(serializers.ModelSerializer):
     book = serializers.StringRelatedField()
     class Meta:
         model = Auther
         fields = '__all__'
 
     
-
+ 
 
 class BookListSerializer(serializers.ModelSerializer):
     class Meta:
@@ -39,12 +39,12 @@ class BookDetailSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
     def get_reviews_count(self,object):
-        reviews_count= object.review_book.all().count()
+        reviews_count= object.book_review.all().count()
         return reviews_count
 
     def get_avg_rate(self,object):
         total = 0
-        reviews = object.review_book.all()
+        reviews = object.book_review.all()
         for review in reviews:
             total += review.rate
         if reviews :

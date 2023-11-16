@@ -14,7 +14,7 @@ class AutherListAPI(generics.ListCreateAPIView):
     queryset= Auther.objects.all()
 
 class AutherDetailAPI(generics.RetrieveUpdateDestroyAPIView):
-    serializer_class= AutherdetailSerializer 
+    serializer_class= AutherDetailSerializer 
     queryset= Auther.objects.all()
 
 class BookListAPI(generics.ListCreateAPIView):
