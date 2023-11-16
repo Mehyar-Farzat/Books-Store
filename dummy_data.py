@@ -20,3 +20,21 @@ def add_Auther(n):
 
 #add_Auther(48)
 
+
+#____________________________________#
+
+
+def add_books(n):
+    fake = Faker()
+    for x in range(n):
+       Book.objects.create(
+           title = fake.text(max_nb_chars=20),
+           auther=Auther.objects.get(id=random.randint(1,50)),
+           price=round(random.uniform(10.99,90.99),2),
+
+       )
+
+    print(f'{n} Books was created successfully')
+
+
+#add_books(998)
