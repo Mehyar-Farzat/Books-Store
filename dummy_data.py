@@ -38,3 +38,23 @@ def add_books(n):
 
 
 #add_books(998)
+
+
+#______________________________________________#
+
+def add_review(n):
+    fake = Faker()
+
+    for x in range(n):
+        Review.objects.create(
+            book= Book.objects.get(id=random.randint(1,1000)),
+            reviewer_name= User.objects.get(id=random.randint(1,5)),
+            content=fake.text(max_nb_chars=200),
+            rate = random.randint(1,5)
+        )
+
+    print(f'{n} Reviews was created successfully')
+
+
+
+add_review(2998)
