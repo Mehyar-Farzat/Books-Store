@@ -1,4 +1,4 @@
-# E-Commerce Django Store
+# Online Books Store
 
 Welcome to the Django Online Books Store repository! This project is an Online store built using Python, Django, and the Django REST framework, with a full API. The store contains books list and details, auther list and details, and reviews.
 
