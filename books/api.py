@@ -16,6 +16,9 @@ class AutherListAPI(generics.ListAPIView):
     queryset= Auther.objects.all()
     pagination_class = MyPagination
 
+    filter_backends = [filters.SearchFilter]
+    search_fields = ['name']
+   
 class AutherDetailAPI(generics.RetrieveAPIView):
     serializer_class= AutherDetailSerializer 
     queryset= Auther.objects.all()
