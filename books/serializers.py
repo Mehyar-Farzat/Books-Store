@@ -29,7 +29,7 @@ class BookListSerializer(serializers.ModelSerializer):
 
 
 class BookDetailSerializer(serializers.ModelSerializer):
-    auther= serializers.StringRelatedField()
+    auther= serializers.StringRelatedField()  #wir haben auther hier hinzugefügt damit wir den auther als name string haben und nicht als id 
     reviews = ReviewSerializer(many=True, source ='book_review')
     reviews_count = serializers.SerializerMethodField()
     avg_rate = serializers.SerializerMethodField()

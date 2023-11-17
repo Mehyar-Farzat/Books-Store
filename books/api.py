@@ -32,7 +32,6 @@ class BookListAPI(generics.ListAPIView):
     
     filter_backends = [filters.SearchFilter,DjangoFilterBackend,filters.OrderingFilter]
     search_fields = ['title']
-    filterset_fields = ['price']
     ordering_fields = ['price']
     filterset_class = BookFilter
 
