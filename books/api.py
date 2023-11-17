@@ -19,12 +19,12 @@ class AutherListAPI(generics.ListCreateAPIView):
 class AutherDetailAPI(generics.RetrieveUpdateDestroyAPIView):
     serializer_class= AutherDetailSerializer 
     queryset= Auther.objects.all()
-
+    pagination_class = MyPagination
 
 class BookListAPI(generics.ListCreateAPIView):
     serializer_class= BookListSerializer 
     queryset= Book.objects.all()
-    pagination_class = MyPagination
+    
     filter_backends = [filters.SearchFilter,DjangoFilterBackend,filters.OrderingFilter]
     search_fields = ['title']
     filterset_fields = ['price']
