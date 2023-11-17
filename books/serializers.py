@@ -22,13 +22,14 @@ class AutherDetailSerializer(serializers.ModelSerializer):
  
 
 class BookListSerializer(serializers.ModelSerializer):
+    auther= serializers.StringRelatedField()
     class Meta:
         model = Book
         fields = '__all__'
 
 
 class BookDetailSerializer(serializers.ModelSerializer):
-    Auther = serializers.StringRelatedField()
+    auther= serializers.StringRelatedField()
     reviews = ReviewSerializer(many=True, source ='book_review')
     reviews_count = serializers.SerializerMethodField()
     avg_rate = serializers.SerializerMethodField()
