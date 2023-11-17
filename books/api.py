@@ -14,12 +14,12 @@ from .myfilters import BookFilter
 class AutherListAPI(generics.ListAPIView):
     serializer_class= AutherListSerializer 
     queryset= Auther.objects.all()
-
+    pagination_class = MyPagination
 
 class AutherDetailAPI(generics.RetrieveAPIView):
     serializer_class= AutherDetailSerializer 
     queryset= Auther.objects.all()
-    pagination_class = MyPagination
+    
 
 class BookListAPI(generics.ListAPIView):
     serializer_class= BookListSerializer 
