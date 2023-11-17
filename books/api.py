@@ -16,10 +16,10 @@ class AutherListAPI(generics.ListAPIView):
     queryset= Auther.objects.all()
     pagination_class = MyPagination
 
-    filter_backends = [filters.SearchFilter,DjangoFilterBackend]
+    filter_backends = [filters.SearchFilter,DjangoFilterBackend,filters.OrderingFilter]
     search_fields = ['name']
     filterset_fields=['name','age','biography']
-    
+    ordering_fields = ['age']
    
 class AutherDetailAPI(generics.RetrieveAPIView):
     serializer_class= AutherDetailSerializer 
