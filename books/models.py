@@ -33,4 +33,5 @@ class Review(models.Model):
     rate = models.IntegerField()
 
     def __str__(self):
-        return str(self.book)
+        return str(self.book) + ' : ' + str(self.content)
+        #return str(self.book)

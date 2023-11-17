@@ -6,6 +6,7 @@ from django.contrib.auth.models import User
 import random
 from faker import Faker
 
+
 def add_Auther(n):
     fake = Faker()
     for x in range(n):
@@ -13,6 +14,7 @@ def add_Auther(n):
             name = fake.name(),
             age = random.randint(25,75),
             biography= fake.text(max_nb_chars=500)
+        
         )
 
     print(f'{n} Authers was created successfully')
