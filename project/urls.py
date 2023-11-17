@@ -16,7 +16,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-
+from books.api import AutherListAPI, AutherDetailAPI, BookListAPI, BookDetailAPI
 urlpatterns = [
     path('admin/', admin.site.urls),
-]
+    path('api/list', BookListAPI.as_view()),
+    path('api/list/<int:pk>', BookDetailAPI.as_view()),
+    path('api/list/auther', AutherListAPI.as_view()),
+    path('api/list/auther/<int:pk>', AutherDetailAPI.as_view()),
+    ]
