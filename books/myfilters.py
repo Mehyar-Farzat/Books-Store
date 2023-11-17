@@ -9,4 +9,5 @@ class BookFilter(filters.FilterSet):
             'title' :['contains'],
             'price' : ['range'],
             'auther' : ['exact'],
+            'publish_date':['exact']
         }
