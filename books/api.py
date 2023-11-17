@@ -11,17 +11,17 @@ from .myfilters import BookFilter
 
 
 
-class AutherListAPI(generics.ListCreateAPIView):
+class AutherListAPI(generics.ListAPIView):
     serializer_class= AutherListSerializer 
     queryset= Auther.objects.all()
 
 
-class AutherDetailAPI(generics.RetrieveUpdateDestroyAPIView):
+class AutherDetailAPI(generics.RetrieveAPIView):
     serializer_class= AutherDetailSerializer 
     queryset= Auther.objects.all()
     pagination_class = MyPagination
 
-class BookListAPI(generics.ListCreateAPIView):
+class BookListAPI(generics.ListAPIView):
     serializer_class= BookListSerializer 
     queryset= Book.objects.all()
     
@@ -31,6 +31,6 @@ class BookListAPI(generics.ListCreateAPIView):
     ordering_fields = ['price']
     filterset_class = BookFilter
 
-class BookDetailAPI(generics.RetrieveUpdateDestroyAPIView):
+class BookDetailAPI(generics.RetrieveAPIView):
     serializer_class= BookDetailSerializer 
     queryset= Book.objects.all()
