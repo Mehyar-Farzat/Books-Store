@@ -6,6 +6,7 @@ from rest_framework import filters
 
 from .serializers import AutherListSerializer, AutherDetailSerializer, BookListSerializer, BookDetailSerializer
 from .models import Auther, Book, Review
+from .mypagination import MyPagination
 from .myfilters import BookFilter
 
 
@@ -23,6 +24,7 @@ class AutherDetailAPI(generics.RetrieveUpdateDestroyAPIView):
 class BookListAPI(generics.ListCreateAPIView):
     serializer_class= BookListSerializer 
     queryset= Book.objects.all()
+    pagination_class = MyPagination
     filter_backends = [filters.SearchFilter,DjangoFilterBackend,filters.OrderingFilter]
     search_fields = ['title']
     filterset_fields = ['price']
