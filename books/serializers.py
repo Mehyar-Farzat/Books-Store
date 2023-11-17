@@ -14,7 +14,7 @@ class AutherListSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 class AutherDetailSerializer(serializers.ModelSerializer):
-    book = serializers.StringRelatedField()
+    book = serializers.StringRelatedField(many=True, source ='book_auther')
     class Meta:
         model = Auther
         fields = '__all__'
