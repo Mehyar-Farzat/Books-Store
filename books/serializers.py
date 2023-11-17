@@ -8,7 +8,6 @@ class ReviewSerializer(serializers.ModelSerializer):
 
 
 class AutherListSerializer(serializers.ModelSerializer):
-    book = serializers.StringRelatedField()
     class Meta:
         model = Auther
         fields = '__all__'
