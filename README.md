@@ -11,8 +11,8 @@ The Online Books Store utilizes the following technologies and frameworks:
 - Python: A powerful programming language used for the backend development.
 - Django: A high-level web framework that follows the model-view-controller (MVC) architectural pattern and provides a clean and efficient way to build web applications.
 - Django REST framework: A powerful and flexible toolkit for building Web APIs.
-- Database**: SQLite (default Django database)
-- Data Generation**: Faker library for Python
+- Database: SQLite (default Django database)
+- Data Generation: Faker library for Python
 - Git: A distributed version control system used for tracking changes in source code during software development.
 
 
